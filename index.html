@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Як накопичити свої перші 100 000 $ | Стратегія</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Intl Tel Input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4E0000',   // Глибокий бордовий
+                        darkform: '#111111',  // Темний фон форми
+                        secondary: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'Arial Narrow', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-in': 'bounceIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Глобальний текстурний фон */
+        body {
+            background-color: #4E0000;
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(220, 60, 60, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(180, 20, 20, 0.3) 0%, transparent 60%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
+            background-attachment: fixed;
+            color: #ffffff;
+        }
+
+        /* Перевизначення стилів для телефону */
+        .iti { width: 100%; }
+        .iti__country-list { background-color: #1a1a1a; color: #fff; border: 1px solid #333; }
+        .iti__country-list li:hover { background-color: #333; }
+        .iti__divider { border-bottom: 1px solid #444; }
+        
+        /* Скроллбар */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2a0000; }
+        ::-webkit-scrollbar-thumb { background: #7a0000; border-radius: 4px; }
+    </style>
+</head>
+<body class="font-sans antialiased text-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-[#4E0000]/80 backdrop-blur-md shadow-sm border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-end items-center">
+            <a href="#consultation" class="border-2 border-white text-white hover:bg-white hover:text-primary transition-colors duration-300 font-semibold py-2 px-6 rounded-full text-sm">
+                Записатись на розбір
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO / VSL SECTION -->
+    <section class="py-16 md:py-24 px-4">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 text-white">
+                Як накопичити перші 100 000$ та стабільно отримувати пасивний дохід завдяки інвестиціям
+            </h1>
+            
+            <p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto font-medium">
+                Без магії. Без «швидких схем». Тільки стратегія, математика і система.<br>
+                <span class="block mt-2">Цей урок — про план, який можна почати виконувати вже цього місяця.</span>
+            </p>
+
+            <!-- Video Container -->
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/50 border-4 border-white/20 cursor-pointer group" id="video-container" onclick="loadVideo()">
+                <!-- Thumbnail Image (Placeholder) -->
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1920" alt="Video Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
+                
+                <!-- Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.4)] animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="play" class="w-10 h-10 text-primary ml-1 fill-current"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO SECTION (BULLETS) -->
+    <section class="py-12 px-4 relative">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-white"></div>
+                
+                <h2 class="text-3xl font-bold mb-8 text-white">Наступний крок</h2>
+                
+                <!-- Виділений блок тексту -->
+                <div class="bg-white/10 border-l-4 border-white p-6 rounded-r-xl mb-10 shadow-lg">
+                    <p class="text-xl md:text-2xl font-bold text-white leading-relaxed">
+                        Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="underline decoration-white decoration-2 underline-offset-4">в персональній стратегії</span>.
+                    </p>
+                </div>
+                
+                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-white">
+                    <i data-lucide="calendar-check" class="text-white w-6 h-6"></i>
+                    На персональній консультації ми:
+                </h3>
+
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-4 text-white/90 text-lg">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                        <span>Розберемо вашу фінансову точку А без прикрас.</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-white/90 text-lg">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                        <span>Порахуємо реальний математичний план накопичення.</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-white/90 text-lg">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                        <span>Визначимо вашу безпечну стратегію інвестування.</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-white/90 text-lg">
+                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                        <span>Пропишемо чіткі цифри на найближчі 12 місяців.</span>
+                    </li>
+                </ul>
+
+                <!-- Warning Alert -->
+                <div class="bg-black/30 border-l-4 border-white/50 p-4 rounded-r-lg flex gap-3 items-start">
+                    <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0"></i>
+                    <p class="text-sm text-white/80 font-medium">
+                        Це не теорія. Це конкретний план під ваші доходи. Заповніть анкету нижче максимально чесно, щоб я міг підготуватись до нашої зустрічі.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
+    <section id="consultation" class="py-16 px-4 relative">
+        <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <div class="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                <!-- Decorative element -->
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+
+                <div class="text-center mb-10 relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Анкета на консультацію</h2>
+                    <p class="text-white/60">Відповіді допоможуть скласти вашу стратегію</p>
+                </div>
+
+                <form id="vslForm" class="space-y-6 relative z-10">
+                    
+                    <!-- Contacts -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Ваше Ім'я *</label>
+                            <input type="text" id="name" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40" placeholder="Олександр">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-white/80 mb-2">Телефон *</label>
+                            <input type="tel" id="phone" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="">
+                        </div>
+                    </div>
+
+                    <!-- Radio Question 1: Income -->
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-3">Ваш рівень доходу зараз:</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="income" value="Нижче бажаного" class="peer hidden" required>
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    Нижче бажаного
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="income" value="Задовільний" class="peer hidden">
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    Задовільний
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="income" value="Вище бажаного" class="peer hidden">
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    Вище бажаного
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Radio Question 2: Debts -->
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-3">Чи є у вас кредити/борги?</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="debt" value="Так" class="peer hidden" required>
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    Так, є
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="debt" value="Ні" class="peer hidden">
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    Ні, немає
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Radio Question 3: Timeline -->
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-3">За який термін хочете досягти 100 000 $?</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="timeline" value="1 рік" class="peer hidden" required>
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    За 1 рік
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="timeline" value="5 років" class="peer hidden">
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    За 5 років
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="timeline" value="10 років" class="peer hidden">
+                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
+                                    За 10 років
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Textarea: Goal -->
+                    <div>
+                        <label class="block text-sm font-medium text-white/80 mb-2">Ваша головна фінансова ціль *</label>
+                        <textarea id="goal" rows="3" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40 resize-none" placeholder="Опишіть коротко, для чого вам потрібен цей капітал..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submitBtn" class="w-full bg-white text-primary font-bold text-lg uppercase tracking-wider py-4 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:bg-gray-100 hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-2 mt-4">
+                        <span>Записатись на консультацію</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10">
+        <p>© 2024. Всі права захищено.</p>
+        <div class="mt-2 flex justify-center gap-4">
+            <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
+            <a href="#" class="hover:text-white transition-colors">Договір оферти</a>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm px-4">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center relative shadow-2xl animate-bounce-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-10 h-10 text-primary"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Заявка прийнята!</h3>
+            <p class="text-gray-600 mb-6">Я отримав ваші дані. Найближчим часом зв'яжусь з вами для узгодження часу консультації.</p>
+            <button onclick="closeModal()" class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-[#3a0000] transition-colors">
+                Зрозуміло
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+    <script>
+        // 1. Ініціалізація UI
+        lucide.createIcons();
+        AOS.init({ once: true, offset: 100, duration: 800 });
+
+        // 2. Логіка Відео (Lazy Load YouTube)
+        const YOUTUBE_VIDEO_ID = "t8mRxyVfFko"; // ТУТ ВСТАВ ID СВОГО ВІДЕО
+        function loadVideo() {
+            const container = document.getElementById('video-container');
+            container.innerHTML = `
+                <iframe 
+                    class="absolute inset-0 w-full h-full rounded-xl"
+                    src="https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&showinfo=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
+            container.onclick = null; // Вимикаємо клік
+            container.classList.remove('cursor-pointer', 'group');
+        }
+
+        // 3. Ініціалізація Intl-Tel-Input з GeoJS
+        const phoneInput = document.querySelector("#phone");
+        const iti = window.intlTelInput(phoneInput, {
+            initialCountry: "auto",
+            separateDialCode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+            geoIpLookup: function(callback) {
+                fetch("https://get.geojs.io/v1/ip/country.json")
+                    .then(res => res.json())
+                    .then(data => callback(data.country))
+                    .catch(() => callback("ua"));
+            }
+        });
+
+        // 4. UTM Парсер
+        function getUTMs() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                utm_source: params.get('utm_source') || '-',
+                utm_medium: params.get('utm_medium') || '-',
+                utm_campaign: params.get('utm_campaign') || '-',
+                utm_content: params.get('utm_content') || '-',
+                utm_term: params.get('utm_term') || '-'
+            };
+        }
+
+        // 5. Логіка відправки форми
+        const GOOGLE_SCRIPT_URL = "ТУТ_ВСТАВ_ПОСИЛАННЯ_НА_WEB_APP_GOOGLE_APPS_SCRIPT"; 
+        const TARGET_SHEET_NAME = "Leads_Finance100k"; // Назва листа в таблиці
+
+        const form = document.getElementById('vslForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Валідація телефону
+            if (!iti.isValidNumber()) {
+                alert("Будь ласка, введіть коректний номер телефону");
+                phoneInput.focus();
+                return;
+            }
+
+            // Збираємо дані
+            const utms = getUTMs();
+            const formData = {
+                targetSheet: TARGET_SHEET_NAME,
+                name: document.getElementById('name').value.trim(),
+                phone: iti.getNumber(),
+                income: document.querySelector('input[name="income"]:checked').value,
+                debt: document.querySelector('input[name="debt"]:checked').value,
+                timeline: document.querySelector('input[name="timeline"]:checked').value,
+                goal: document.getElementById('goal').value.trim(),
+                ...utms
+            };
+
+            // Візуальний зворотній зв'язок на кнопці
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-6 h-6 animate-spin"></i> Відправка...';
+            submitBtn.disabled = true;
+            lucide.createIcons();
+
+            try {
+                // Відправка
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                // Успіх
+                form.reset();
+                document.getElementById('successModal').classList.remove('hidden');
+                document.getElementById('successModal').classList.add('flex');
+            } catch (error) {
+                console.error('Помилка відправки:', error);
+                alert('Сталася помилка. Спробуйте ще раз або напишіть нам у месенджер.');
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                lucide.createIcons();
+            }
+        });
+
+        // 6. Управління Модальним вікном
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
