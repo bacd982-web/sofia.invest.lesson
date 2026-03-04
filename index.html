@@ -28,7 +28,7 @@
                         secondary: '#1A1A1A'
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'Arial Narrow', 'sans-serif'],
+                        sans:['Montserrat', 'Arial Narrow', 'sans-serif'],
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -81,18 +81,17 @@
     </header>
 
     <!-- HERO / VSL SECTION -->
-    <!-- Зменшено padding зверху для мобільної версії (pt-6 pb-12), щоб підняти контент -->
-    <section class="pt-6 pb-12 md:py-24 px-4">
-        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <!-- Зменшено розмір шрифту на мобільному (text-2xl) та відступ знизу (mb-4) -->
+    <!-- Зменшено нижній відступ (pb-4) для скорочення дистанції до наступного блоку -->
+    <section class="pt-6 pb-4 md:pb-10 md:pt-24 px-4">
+        <div class="max-w-4xl mx-auto text-left" data-aos="fade-up">
+            <!-- Вирівняно по лівому краю -->
             <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-8 text-white">
                 Як накопичити перші 100 000$ та стабільно отримувати пасивний дохід завдяки інвестиціям
             </h1>
             
-            <!-- Трохи зменшено текст і відступ для підзаголовка на телефоні (text-base, mb-6) -->
-            <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl mx-auto font-medium">
-                Без магії. Без «швидких схем». Тільки стратегія, математика і система.<br>
-                <span class="block mt-2">Цей урок — про план, який можна почати виконувати вже цього місяця.</span>
+            <!-- Скорочений текст, вирівняний по лівому краю -->
+            <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl font-medium">
+                Цей урок — про план, який можна почати виконувати вже цього місяця.
             </p>
 
             <!-- Video Container -->
@@ -107,55 +106,76 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Стрілка вниз та заохочення під відео (по центру) -->
+            <!-- Зменшено верхній відступ (mt-6) -->
+            <div class="mt-6 md:mt-10 flex flex-col items-center justify-center text-center animate-bounce">
+                <p class="text-lg md:text-xl font-medium text-white mb-2 drop-shadow-md">Подивились відео? Тоді саме час забрати бонус</p>
+                <!-- Тоненька легенька стрілка завдяки stroke-[1] -->
+                <i data-lucide="arrow-down" class="w-8 h-8 text-white/90 stroke-[1]"></i>
+            </div>
         </div>
     </section>
 
     <!-- INFO SECTION (BULLETS) -->
-    <section class="py-12 px-4 relative">
+    <!-- Зменшено верхній відступ (pt-2) для скорочення дистанції від стрілочки -->
+    <section class="pt-2 pb-12 md:pt-6 px-4 relative">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <div class="bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-2 h-full bg-white"></div>
+            <div class="relative pt-2">
                 
-                <h2 class="text-3xl font-bold mb-8 text-white">Наступний крок</h2>
+                <!-- Овальна плашка, що підсвічується -->
+                <div class="text-left mb-6">
+                    <span class="inline-block bg-black/20 backdrop-blur-md border border-red-400 rounded-full px-8 py-3 text-xl md:text-2xl font-bold text-white shadow-[0_0_20px_rgba(248,113,113,0.4)]">
+                        Головний бонус після уроку
+                    </span>
+                </div>
                 
-                <!-- Виділений блок тексту -->
-                <div class="bg-white/10 border-l-4 border-white p-6 rounded-r-xl mb-10 shadow-lg">
-                    <p class="text-xl md:text-2xl font-bold text-white leading-relaxed">
-                        Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="underline decoration-white decoration-2 underline-offset-4">в персональній стратегії</span>.
+                <!-- Текст цитата з меншим, тоншим шрифтом та лінією зліва -->
+                <div class="border-l-4 border-white/40 pl-4 md:pl-5 mb-10 text-left">
+                    <p class="text-base md:text-lg font-normal text-white/80 leading-relaxed">
+                        Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="font-medium text-white">в персональній стратегії</span>.
                     </p>
                 </div>
                 
-                <h3 class="text-xl font-bold mb-6 flex items-center gap-3 text-white">
-                    <i data-lucide="calendar-check" class="text-white w-6 h-6"></i>
-                    На персональній консультації ми:
-                </h3>
-
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start gap-4 text-white/90 text-lg">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                        <span>Розберемо вашу фінансову точку А без прикрас.</span>
-                    </li>
-                    <li class="flex items-start gap-4 text-white/90 text-lg">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                        <span>Порахуємо реальний математичний план накопичення.</span>
-                    </li>
-                    <li class="flex items-start gap-4 text-white/90 text-lg">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                        <span>Визначимо вашу безпечну стратегію інвестування.</span>
-                    </li>
-                    <li class="flex items-start gap-4 text-white/90 text-lg">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                        <span>Пропишемо чіткі цифри на найближчі 12 місяців.</span>
-                    </li>
-                </ul>
-
-                <!-- Warning Alert -->
-                <div class="bg-black/30 border-l-4 border-white/50 p-4 rounded-r-lg flex gap-3 items-start">
-                    <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0"></i>
-                    <p class="text-sm text-white/80 font-medium">
-                        Це не теорія. Це конкретний план під ваші доходи. Заповніть анкету нижче максимально чесно, щоб я міг підготуватись до нашої зустрічі.
-                    </p>
+                <!-- Заголовок без плашок -->
+                <div class="text-left mb-6">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
+                        <i data-lucide="calendar-check" class="text-white w-8 h-8"></i>
+                        Безкоштовна стратегічна консультація
+                    </h3>
+                    <p class="text-xl md:text-2xl text-white/90 mt-2 font-medium">по інвестуванню</p>
                 </div>
+
+                <!-- Напівпрозора плашка з обводкою темно-червоного кольору -->
+                <div class="bg-black/20 backdrop-blur-sm border-2 border-[#2a0000] rounded-3xl p-6 md:p-10 shadow-2xl">
+                    <ul class="space-y-5 mb-8">
+                        <li class="flex items-start gap-4 text-white/95 text-lg">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                            <span>Розберемо вашу фінансову точку А без прикрас.</span>
+                        </li>
+                        <li class="flex items-start gap-4 text-white/95 text-lg">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                            <span>Порахуємо реальний математичний план накопичення.</span>
+                        </li>
+                        <li class="flex items-start gap-4 text-white/95 text-lg">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                            <span>Визначимо вашу безпечну стратегію інвестування.</span>
+                        </li>
+                        <li class="flex items-start gap-4 text-white/95 text-lg">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
+                            <span>Пропишемо чіткі цифри на найближчі 12 місяців.</span>
+                        </li>
+                    </ul>
+
+                    <!-- Warning Alert всередині плашки -->
+                    <div class="pt-6 border-t border-[#4E0000]/60 flex gap-4 items-start">
+                        <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0 mt-0.5"></i>
+                        <p class="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                            Це не теорія. Це конкретний план під ваші доходи. Заповніть анкету нижче максимально чесно, щоб я міг підготуватись до нашої зустрічі.
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -274,10 +294,10 @@
 
     <!-- FOOTER -->
     <footer class="bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10">
-        <p>©  Всі права захищено.</p>
+        <p>© 2024. Всі права захищено.</p>
         <div class="mt-2 flex justify-center gap-4">
             <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
-            <a href="#" class="hover:text-white transition-colors"></a>
+            <a href="#" class="hover:text-white transition-colors">Договір оферти</a>
         </div>
     </footer>
 
