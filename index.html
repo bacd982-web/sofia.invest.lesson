@@ -81,25 +81,20 @@
     </header>
 
     <!-- HERO / VSL SECTION -->
-    <!-- Зменшено нижній відступ (pb-4) для скорочення дистанції до наступного блоку -->
     <section class="pt-6 pb-4 md:pb-10 md:pt-24 px-4">
         <div class="max-w-4xl mx-auto text-left" data-aos="fade-up">
-            <!-- Вирівняно по лівому краю -->
             <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-8 text-white">
                 Як накопичити перші 100 000$ та стабільно отримувати пасивний дохід завдяки інвестиціям
             </h1>
             
-            <!-- Скорочений текст, вирівняний по лівому краю -->
             <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl font-medium">
                 Цей урок — про план, який можна почати виконувати вже цього місяця.
             </p>
 
             <!-- Video Container -->
             <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/50 border-4 border-white/20 cursor-pointer group" id="video-container" onclick="loadVideo()">
-                <!-- Thumbnail Image (Placeholder) -->
                 <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=1920" alt="Video Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
                 
-                <!-- Play Button -->
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.4)] animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
                         <i data-lucide="play" class="w-10 h-10 text-primary ml-1 fill-current"></i>
@@ -107,18 +102,15 @@
                 </div>
             </div>
 
-            <!-- Стрілка вниз та заохочення під відео (по центру) -->
-            <!-- Зменшено верхній відступ (mt-6) -->
+            <!-- Стрілка вниз -->
             <div class="mt-6 md:mt-10 flex flex-col items-center justify-center text-center animate-bounce">
                 <p class="text-lg md:text-xl font-medium text-white mb-2 drop-shadow-md">Подивились відео? Тоді саме час забрати бонус</p>
-                <!-- Тоненька легенька стрілка завдяки stroke-[1] -->
                 <i data-lucide="arrow-down" class="w-8 h-8 text-white/90 stroke-[1]"></i>
             </div>
         </div>
     </section>
 
     <!-- INFO SECTION (BULLETS) -->
-    <!-- Зменшено верхній відступ (pt-2) для скорочення дистанції від стрілочки -->
     <section class="pt-2 pb-12 md:pt-6 px-4 relative">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="relative pt-2">
@@ -130,23 +122,23 @@
                     </span>
                 </div>
                 
-                <!-- Текст цитата з меншим, тоншим шрифтом та лінією зліва -->
+                <!-- Текст цитата -->
                 <div class="border-l-4 border-white/40 pl-4 md:pl-5 mb-10 text-left">
                     <p class="text-base md:text-lg font-normal text-white/80 leading-relaxed">
                         Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="font-medium text-white">в персональній стратегії</span>.
                     </p>
                 </div>
                 
-                <!-- Заголовок без плашок -->
-                <div class="text-left mb-6">
-                    <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3">
-                        <i data-lucide="calendar-check" class="text-white w-8 h-8"></i>
-                        Безкоштовна стратегічна консультація
+                <!-- Заголовок без плашок (ВИПРАВЛЕНО ТУТ) -->
+                <div class="text-left mb-8 w-full">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white flex items-start gap-3 w-full">
+                        <i data-lucide="calendar-check" class="text-white w-8 h-8 shrink-0 mt-0.5 md:mt-1"></i>
+                        <span class="flex-1 leading-tight">Безкоштовна стратегічна консультація</span>
                     </h3>
-                    <p class="text-xl md:text-2xl text-white/90 mt-2 font-medium">по інвестуванню</p>
+                    <p class="text-xl md:text-2xl text-white/90 mt-2 font-medium pl-11">по інвестуванню</p>
                 </div>
 
-                <!-- Напівпрозора плашка з обводкою темно-червоного кольору -->
+                <!-- Напівпрозора плашка з обводкою -->
                 <div class="bg-black/20 backdrop-blur-sm border-2 border-[#2a0000] rounded-3xl p-6 md:p-10 shadow-2xl">
                     <ul class="space-y-5 mb-8">
                         <li class="flex items-start gap-4 text-white/95 text-lg">
@@ -167,7 +159,7 @@
                         </li>
                     </ul>
 
-                    <!-- Warning Alert всередині плашки -->
+                    <!-- Warning Alert -->
                     <div class="pt-6 border-t border-[#4E0000]/60 flex gap-4 items-start">
                         <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0 mt-0.5"></i>
                         <p class="text-sm md:text-base text-white/90 font-medium leading-relaxed">
@@ -184,7 +176,6 @@
     <section id="consultation" class="py-16 px-4 relative">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <!-- Decorative element -->
                 <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
                 <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
 
@@ -195,7 +186,6 @@
 
                 <form id="vslForm" class="space-y-6 relative z-10">
                     
-                    <!-- Contacts -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-medium text-white/80 mb-2">Ваше Ім'я *</label>
@@ -207,7 +197,6 @@
                         </div>
                     </div>
 
-                    <!-- Radio Question 1: Income -->
                     <div>
                         <label class="block text-sm font-medium text-white/80 mb-3">Ваш рівень доходу зараз:</label>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -232,7 +221,6 @@
                         </div>
                     </div>
 
-                    <!-- Radio Question 2: Debts -->
                     <div>
                         <label class="block text-sm font-medium text-white/80 mb-3">Чи є у вас кредити/борги?</label>
                         <div class="grid grid-cols-2 gap-3">
@@ -251,7 +239,6 @@
                         </div>
                     </div>
 
-                    <!-- Radio Question 3: Timeline -->
                     <div>
                         <label class="block text-sm font-medium text-white/80 mb-3">За який термін хочете досягти 100 000 $?</label>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -276,13 +263,11 @@
                         </div>
                     </div>
 
-                    <!-- Textarea: Goal -->
                     <div>
                         <label class="block text-sm font-medium text-white/80 mb-2">Ваша головна фінансова ціль *</label>
                         <textarea id="goal" rows="3" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40 resize-none" placeholder="Опишіть коротко, для чого вам потрібен цей капітал..."></textarea>
                     </div>
 
-                    <!-- Submit Button -->
                     <button type="submit" id="submitBtn" class="w-full bg-white text-primary font-bold text-lg uppercase tracking-wider py-4 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:bg-gray-100 hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-2 mt-4">
                         <span>Записатись на консультацію</span>
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -324,12 +309,10 @@
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
 
     <script>
-        // 1. Ініціалізація UI
         lucide.createIcons();
         AOS.init({ once: true, offset: 100, duration: 800 });
 
-        // 2. Логіка Відео (Lazy Load YouTube)
-        const YOUTUBE_VIDEO_ID = "t8mRxyVfFko"; // ТУТ ВСТАВ ID СВОГО ВІДЕО
+        const YOUTUBE_VIDEO_ID = "t8mRxyVfFko"; 
         function loadVideo() {
             const container = document.getElementById('video-container');
             container.innerHTML = `
@@ -341,11 +324,10 @@
                     allowfullscreen>
                 </iframe>
             `;
-            container.onclick = null; // Вимикаємо клік
+            container.onclick = null;
             container.classList.remove('cursor-pointer', 'group');
         }
 
-        // 3. Ініціалізація Intl-Tel-Input з GeoJS
         const phoneInput = document.querySelector("#phone");
         const iti = window.intlTelInput(phoneInput, {
             initialCountry: "auto",
@@ -359,7 +341,6 @@
             }
         });
 
-        // 4. UTM Парсер
         function getUTMs() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -371,9 +352,8 @@
             };
         }
 
-        // 5. Логіка відправки форми
         const GOOGLE_SCRIPT_URL = "ТУТ_ВСТАВ_ПОСИЛАННЯ_НА_WEB_APP_GOOGLE_APPS_SCRIPT"; 
-        const TARGET_SHEET_NAME = "Leads_Finance100k"; // Назва листа в таблиці
+        const TARGET_SHEET_NAME = "Leads_Finance100k"; 
 
         const form = document.getElementById('vslForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -381,14 +361,12 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Валідація телефону
             if (!iti.isValidNumber()) {
                 alert("Будь ласка, введіть коректний номер телефону");
                 phoneInput.focus();
                 return;
             }
 
-            // Збираємо дані
             const utms = getUTMs();
             const formData = {
                 targetSheet: TARGET_SHEET_NAME,
@@ -401,14 +379,12 @@
                 ...utms
             };
 
-            // Візуальний зворотній зв'язок на кнопці
             const originalBtnText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-6 h-6 animate-spin"></i> Відправка...';
             submitBtn.disabled = true;
             lucide.createIcons();
 
             try {
-                // Відправка
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -416,7 +392,6 @@
                     body: JSON.stringify(formData)
                 });
 
-                // Успіх
                 form.reset();
                 document.getElementById('successModal').classList.remove('hidden');
                 document.getElementById('successModal').classList.add('flex');
@@ -430,7 +405,6 @@
             }
         });
 
-        // 6. Управління Модальним вікном
         function closeModal() {
             const modal = document.getElementById('successModal');
             modal.classList.add('hidden');
