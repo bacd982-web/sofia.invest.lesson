@@ -82,10 +82,10 @@
         ::-webkit-scrollbar-thumb { background: #7a0000; border-radius: 4px; }
     </style>
 </head>
-<body class="font-sans antialiased text-white">
+<body class="font-sans antialiased text-white overflow-x-hidden">
 
-    <!-- Картинка долара в правому куті (Притиснута впритул до правого краю right-0, поміщена на шар z-10) -->
-    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 right-0 z-10 w-[350px] sm:w-[480px] md:w-[570px] drop-shadow-2xl pointer-events-none">
+    <!-- Картинка долара в правому куті (Зміщена правіше на мобільному через -right-32 та sm:-right-20) -->
+    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 -right-32 sm:-right-20 md:right-0 z-10 w-[350px] sm:w-[480px] md:w-[570px] drop-shadow-2xl pointer-events-none">
 
     <!-- HERO / VSL SECTION (Додано relative z-20, щоб бути поверх долара) -->
     <section class="relative z-20 pt-16 pb-4 md:pb-10 md:pt-24 px-4">
