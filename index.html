@@ -85,7 +85,6 @@
 <body class="font-sans antialiased text-white">
 
     <!-- HEADER -->
-    <!-- Змінено на absolute, щоб шапка не перекривала долар при скролі, та перенесено кнопку вліво (justify-start) -->
     <header class="absolute top-0 w-full z-50">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-start items-center">
             <a href="#consultation" class="border border-white/40 bg-black/30 backdrop-blur-sm text-white hover:bg-white hover:text-primary transition-colors duration-300 font-semibold py-2 px-6 rounded-full text-sm">
@@ -96,15 +95,13 @@
 
     <!-- HERO / VSL SECTION -->
     <section class="pt-24 pb-4 md:pb-10 md:pt-32 px-4">
-        <div class="max-w-4xl mx-auto text-left" data-aos="fade-up">
-            <!-- Додано кастомну тінь text-shadow для максимального відриву тексту від фону -->
-            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-8 text-white" style="text-shadow: 2px 4px 10px rgba(0,0,0,0.9), 0px 0px 25px rgba(0,0,0,0.8), 0px 0px 50px rgba(0,0,0,0.6);">
+        <!-- Змінено вирівнювання на text-center -->
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            
+            <!-- Зменшено розмір (text-4xl/5xl), додано uppercase, зменшено тінь -->
+            <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 md:mb-10 text-white uppercase" style="text-shadow: 1px 2px 6px rgba(0,0,0,0.8), 0px 0px 15px rgba(0,0,0,0.5);">
                 Як накопичити перші 100 000$ та стабільно отримувати пасивний дохід завдяки інвестиціям
             </h1>
-            
-            <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl font-medium drop-shadow-md">
-                Цей урок — про план, який можна почати виконувати вже цього місяця.
-            </p>
 
             <!-- Video Container -->
             <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/50 border-4 border-white/20 cursor-pointer group" id="video-container" onclick="loadVideo()">
@@ -428,5 +425,3 @@
     </script>
 </body>
 </html>
-
-
