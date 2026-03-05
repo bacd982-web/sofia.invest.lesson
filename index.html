@@ -23,8 +23,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4E0000',   // Глибокий бордовий
-                        darkform: '#111111',  // Темний фон форми
+                        primary: '#4E0000',   
+                        darkform: '#111111',  
                         secondary: '#1A1A1A'
                     },
                     fontFamily: {
@@ -46,15 +46,28 @@
     </script>
 
     <style>
-        /* Глобальний текстурний фон */
+        /* Глобальний фон */
         body {
-            background-color: #4E0000;
-            background-image: 
-                radial-gradient(circle at 80% 20%, rgba(220, 60, 60, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(180, 20, 20, 0.3) 0%, transparent 60%),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.2'/%3E%3C/svg%3E");
-            background-attachment: fixed;
+            background-color: #5c1015; /* Запасний колір фону під картинку */
             color: #ffffff;
+            position: relative;
+        }
+
+        /* Фіксований фон через псевдоелемент для ідеального відображення на мобільних пристроях (особливо iOS) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* ВАЖЛИВО: Вкажіть тут назву вашої збереженої картинки (наприклад bg.jpg) */
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            /* Притискаємо картинку до правого верхнього кута, щоб завжди було видно долар */
+            background-position: top right; 
+            background-repeat: no-repeat;
         }
 
         /* Перевизначення стилів для телефону */
@@ -72,22 +85,23 @@
 <body class="font-sans antialiased text-white">
 
     <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-[#4E0000]/80 backdrop-blur-md shadow-sm border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-end items-center">
-            <a href="#consultation" class="border-2 border-white text-white hover:bg-white hover:text-primary transition-colors duration-300 font-semibold py-2 px-6 rounded-full text-sm">
+    <!-- Змінено на absolute, щоб шапка не перекривала долар при скролі, та перенесено кнопку вліво (justify-start) -->
+    <header class="absolute top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-start items-center">
+            <a href="#consultation" class="border border-white/40 bg-black/30 backdrop-blur-sm text-white hover:bg-white hover:text-primary transition-colors duration-300 font-semibold py-2 px-6 rounded-full text-sm">
                 Записатись на розбір
             </a>
         </div>
     </header>
 
     <!-- HERO / VSL SECTION -->
-    <section class="pt-6 pb-4 md:pb-10 md:pt-24 px-4">
+    <section class="pt-24 pb-4 md:pb-10 md:pt-32 px-4">
         <div class="max-w-4xl mx-auto text-left" data-aos="fade-up">
-            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-8 text-white">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-8 text-white drop-shadow-lg">
                 Як накопичити перші 100 000$ та стабільно отримувати пасивний дохід завдяки інвестиціям
             </h1>
             
-            <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl font-medium">
+            <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 md:mb-10 max-w-2xl font-medium drop-shadow-md">
                 Цей урок — про план, який можна почати виконувати вже цього місяця.
             </p>
 
@@ -105,7 +119,7 @@
             <!-- Стрілка вниз -->
             <div class="mt-6 md:mt-10 flex flex-col items-center justify-center text-center animate-bounce">
                 <p class="text-lg md:text-xl font-medium text-white mb-2 drop-shadow-md">Подивились відео? Тоді саме час забрати бонус</p>
-                <i data-lucide="arrow-down" class="w-8 h-8 text-white/90 stroke-[1]"></i>
+                <i data-lucide="arrow-down" class="w-8 h-8 text-white/90 stroke-[1] drop-shadow-md"></i>
             </div>
         </div>
     </section>
@@ -117,29 +131,29 @@
                 
                 <!-- Овальна плашка, що підсвічується -->
                 <div class="text-left mb-6">
-                    <span class="inline-block bg-black/20 backdrop-blur-md border border-red-400 rounded-full px-8 py-3 text-xl md:text-2xl font-bold text-white shadow-[0_0_20px_rgba(248,113,113,0.4)]">
+                    <span class="inline-block bg-black/40 backdrop-blur-md border border-red-400 rounded-full px-8 py-3 text-xl md:text-2xl font-bold text-white shadow-[0_0_20px_rgba(248,113,113,0.4)]">
                         Головний бонус після уроку
                     </span>
                 </div>
                 
                 <!-- Текст цитата -->
                 <div class="border-l-4 border-white/40 pl-4 md:pl-5 mb-10 text-left">
-                    <p class="text-base md:text-lg font-normal text-white/80 leading-relaxed">
+                    <p class="text-base md:text-lg font-normal text-white/90 leading-relaxed drop-shadow-md">
                         Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="font-medium text-white">в персональній стратегії</span>.
                     </p>
                 </div>
                 
-                <!-- Заголовок без плашок (ВИПРАВЛЕНО ТУТ) -->
+                <!-- Заголовок -->
                 <div class="text-left mb-8 w-full">
-                    <h3 class="text-2xl md:text-3xl font-bold text-white flex items-start gap-3 w-full">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white flex items-start gap-3 w-full drop-shadow-lg">
                         <i data-lucide="calendar-check" class="text-white w-8 h-8 shrink-0 mt-0.5 md:mt-1"></i>
                         <span class="flex-1 leading-tight">Безкоштовна стратегічна консультація</span>
                     </h3>
-                    <p class="text-xl md:text-2xl text-white/90 mt-2 font-medium pl-11">по інвестуванню</p>
+                    <p class="text-xl md:text-2xl text-white/90 mt-2 font-medium pl-11 drop-shadow-md">по інвестуванню</p>
                 </div>
 
                 <!-- Напівпрозора плашка з обводкою -->
-                <div class="bg-black/20 backdrop-blur-sm border-2 border-[#2a0000] rounded-3xl p-6 md:p-10 shadow-2xl">
+                <div class="bg-black/40 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-10 shadow-2xl">
                     <ul class="space-y-5 mb-8">
                         <li class="flex items-start gap-4 text-white/95 text-lg">
                             <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
@@ -160,7 +174,7 @@
                     </ul>
 
                     <!-- Warning Alert -->
-                    <div class="pt-6 border-t border-[#4E0000]/60 flex gap-4 items-start">
+                    <div class="pt-6 border-t border-white/20 flex gap-4 items-start">
                         <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0 mt-0.5"></i>
                         <p class="text-sm md:text-base text-white/90 font-medium leading-relaxed">
                             Це не теорія. Це конкретний план під ваші доходи. Заповніть анкету нижче максимально чесно, щоб я міг підготуватись до нашої зустрічі.
@@ -175,30 +189,30 @@
     <!-- FORM SECTION -->
     <section id="consultation" class="py-16 px-4 relative">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <div class="bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="bg-black/50 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
                 <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
 
                 <div class="text-center mb-10 relative z-10">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Анкета на консультацію</h2>
-                    <p class="text-white/60">Відповіді допоможуть скласти вашу стратегію</p>
+                    <p class="text-white/80">Відповіді допоможуть скласти вашу стратегію</p>
                 </div>
 
                 <form id="vslForm" class="space-y-6 relative z-10">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium text-white/80 mb-2">Ваше Ім'я *</label>
+                            <label class="block text-sm font-medium text-white/90 mb-2">Ваше Ім'я *</label>
                             <input type="text" id="name" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40" placeholder="Олександр">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-white/80 mb-2">Телефон *</label>
+                            <label class="block text-sm font-medium text-white/90 mb-2">Телефон *</label>
                             <input type="tel" id="phone" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-white/80 mb-3">Ваш рівень доходу зараз:</label>
+                        <label class="block text-sm font-medium text-white/90 mb-3">Ваш рівень доходу зараз:</label>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                             <label class="cursor-pointer">
                                 <input type="radio" name="income" value="Нижче бажаного" class="peer hidden" required>
@@ -222,7 +236,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-white/80 mb-3">Чи є у вас кредити/борги?</label>
+                        <label class="block text-sm font-medium text-white/90 mb-3">Чи є у вас кредити/борги?</label>
                         <div class="grid grid-cols-2 gap-3">
                             <label class="cursor-pointer">
                                 <input type="radio" name="debt" value="Так" class="peer hidden" required>
@@ -240,7 +254,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-white/80 mb-3">За який термін хочете досягти 100 000 $?</label>
+                        <label class="block text-sm font-medium text-white/90 mb-3">За який термін хочете досягти 100 000 $?</label>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                             <label class="cursor-pointer">
                                 <input type="radio" name="timeline" value="1 рік" class="peer hidden" required>
@@ -264,7 +278,7 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-white/80 mb-2">Ваша головна фінансова ціль *</label>
+                        <label class="block text-sm font-medium text-white/90 mb-2">Ваша головна фінансова ціль *</label>
                         <textarea id="goal" rows="3" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40 resize-none" placeholder="Опишіть коротко, для чого вам потрібен цей капітал..."></textarea>
                     </div>
 
@@ -278,7 +292,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10">
+    <footer class="bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10 backdrop-blur-sm">
         <p>© 2024. Всі права захищено.</p>
         <div class="mt-2 flex justify-center gap-4">
             <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
