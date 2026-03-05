@@ -81,28 +81,27 @@
         ::-webkit-scrollbar-track { background: #2a0000; }
         ::-webkit-scrollbar-thumb { background: #7a0000; border-radius: 4px; }
 
-        /* Анімація для долара */
+        /* Анімація для долара: тепер він одразу підіймається назад без паузи */
         #floating-dollar {
             transform: translateY(-75%);
         }
         .dollar-anim {
-            animation: dollarDropRetract 4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation: dollarDropRetract 3.5s ease-in-out forwards;
         }
         @keyframes dollarDropRetract {
             0% { transform: translateY(-75%); }
-            15% { transform: translateY(0%); }
-            85% { transform: translateY(0%); }
+            50% { transform: translateY(-5%); } /* Момент досягнення найнижчої точки */
             100% { transform: translateY(-75%); }
         }
     </style>
 </head>
 <body class="font-sans antialiased text-white">
 
-    <!-- Картинка долара в правому куті (Збільшено розміри: w-28 для мобільних) -->
-    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 right-2 sm:right-6 md:right-10 z-[100] w-28 sm:w-36 md:w-40 drop-shadow-2xl pointer-events-none transition-transform">
+    <!-- Картинка долара в правому куті (Збільшена w-44 для мобільних, поміщена на шар z-10 під інший контент) -->
+    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 right-2 sm:right-6 md:right-10 z-10 w-44 sm:w-60 md:w-72 drop-shadow-2xl pointer-events-none transition-transform">
 
-    <!-- HERO / VSL SECTION -->
-    <section class="pt-16 pb-4 md:pb-10 md:pt-24 px-4">
+    <!-- HERO / VSL SECTION (Додано relative z-20, щоб бути поверх долара) -->
+    <section class="relative z-20 pt-16 pb-4 md:pb-10 md:pt-24 px-4">
         <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
             
             <!-- Оновлений заголовок -->
@@ -135,8 +134,8 @@
         </div>
     </section>
 
-    <!-- INFO SECTION (BULLETS) -->
-    <section class="pt-2 pb-12 md:pt-6 px-4 relative">
+    <!-- INFO SECTION (BULLETS) (Додано relative z-20) -->
+    <section class="relative z-20 pt-2 pb-12 md:pt-6 px-4">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="relative pt-2">
                 
@@ -197,8 +196,8 @@
         </div>
     </section>
 
-    <!-- FORM SECTION -->
-    <section id="consultation" class="py-16 px-4 relative">
+    <!-- FORM SECTION (Додано relative z-20) -->
+    <section id="consultation" class="relative z-20 py-16 px-4">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="bg-black/50 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
@@ -302,8 +301,8 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10 backdrop-blur-sm">
+    <!-- FOOTER (Додано relative z-20) -->
+    <footer class="relative z-20 bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10 backdrop-blur-sm">
         <p>© 2026. Всі права захищено.</p>
         <div class="mt-2 flex justify-center gap-4">
             <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
