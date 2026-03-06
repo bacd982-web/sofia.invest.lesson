@@ -84,18 +84,19 @@
 </head>
 <body class="font-sans antialiased text-white overflow-x-hidden">
 
-    <!-- Картинка долара в правому куті (Зменшена для мобільних, притиснута вправо, має плавний перехід для анімації) -->
-    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 right-0 z-10 w-[110px] min-[380px]:w-[130px] sm:w-[220px] md:w-[380px] lg:w-[480px] drop-shadow-2xl pointer-events-none transition-transform duration-100 ease-out origin-top-right">
+    <!-- Картинка долара (Збільшено в 2 рази для всіх брейкпоінтів) -->
+    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 right-0 z-10 w-[220px] min-[380px]:w-[260px] sm:w-[440px] md:w-[760px] lg:w-[960px] drop-shadow-2xl pointer-events-none transition-transform duration-100 ease-out origin-top-right">
 
-    <!-- HERO / VSL SECTION (Додано relative z-20, щоб бути поверх долара) -->
+    <!-- HERO / VSL SECTION -->
     <section class="relative z-20 pt-16 pb-4 md:pb-10 md:pt-24 px-4">
         <div class="max-w-4xl mx-auto" data-aos="fade-up">
             
-            <!-- Оновлений заголовок (Змінено вирівнювання на text-left) -->
+            <!-- Оновлений заголовок (100 000$ зроблено трохи більшим) -->
             <h1 class="mb-8 md:mb-10 text-white text-left" style="text-shadow: 1px 2px 6px rgba(0,0,0,0.8), 0px 0px 15px rgba(0,0,0,0.5);">
                 <span class="block text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase">
                     Як накопичити перші 
-                    <span class="block mt-1 sm:mt-2">100 000$</span>
+                    <!-- Збільшений розмір для суми -->
+                    <span class="block mt-1 sm:mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">100 000$</span>
                 </span>
                 <span class="block text-sm sm:text-base md:text-xl lg:text-2xl font-light leading-snug mt-1 md:mt-2 normal-case tracking-wide text-white/90">
                     та стабільно отримувати пасивний дохід завдяки інвестиціям
@@ -121,12 +122,12 @@
         </div>
     </section>
 
-    <!-- INFO SECTION (BULLETS) (Додано relative z-20) -->
+    <!-- INFO SECTION (BULLETS + BONUSES) -->
     <section class="relative z-20 pt-2 pb-12 md:pt-6 px-4">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="relative pt-2">
                 
-                <!-- Овальна плашка, що підсвічується, тепер по центру і клікабельна -->
+                <!-- Овальна плашка, що підсвічується -->
                 <div class="text-center mb-6 w-full flex justify-center">
                     <a href="#consultation" class="inline-block bg-black/40 backdrop-blur-md border border-red-400 rounded-full px-8 py-3 text-lg sm:text-xl md:text-2xl font-bold text-white shadow-[0_0_20px_rgba(248,113,113,0.4)] hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(248,113,113,0.6)] transition-all duration-300 cursor-pointer">
                         Головний бонус після уроку
@@ -140,8 +141,11 @@
                     </p>
                 </div>
                 
-                <!-- Заголовок -->
+                <!-- БОНУС 1 Заголовок -->
                 <div class="text-left mb-8 w-full">
+                    <div class="inline-block bg-white/10 border border-white/30 rounded-full px-4 py-1.5 text-sm md:text-base font-bold text-white mb-3 uppercase tracking-wider backdrop-blur-md">
+                        Бонус №1
+                    </div>
                     <h3 class="text-lg min-[380px]:text-xl md:text-3xl font-bold text-white flex items-start gap-2 md:gap-3 w-full drop-shadow-lg">
                         <i data-lucide="calendar-check" class="text-white w-6 h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-1"></i>
                         <span class="flex-1 leading-tight">Безкоштовна стратегічна консультація</span>
@@ -149,7 +153,7 @@
                     <p class="text-base md:text-2xl text-white/90 mt-1 md:mt-2 font-medium pl-8 min-[380px]:pl-9 md:pl-11 drop-shadow-md">по інвестуванню</p>
                 </div>
 
-                <!-- Напівпрозора плашка з обводкою -->
+                <!-- БОНУС 1 Контент -->
                 <div class="bg-black/40 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-10 shadow-2xl">
                     <ul class="space-y-5 mb-8">
                         <li class="flex items-start gap-4 text-white/95 text-lg">
@@ -179,19 +183,38 @@
                     </div>
                 </div>
 
+                <!-- БОНУС 2 Блок -->
+                <div class="mt-6 bg-black/40 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
+                    <!-- Декоративний градієнт -->
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div class="inline-block bg-white/10 border border-white/30 rounded-full px-4 py-1.5 text-sm md:text-base font-bold text-white mb-4 uppercase tracking-wider backdrop-blur-md">
+                        Бонус №2
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="star" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 shrink-0 mt-1 fill-yellow-400/20"></i>
+                        <div>
+                            <h3 class="text-lg md:text-2xl font-bold text-white drop-shadow-lg leading-snug">
+                                Спеціальні умови на менторство "Перший мільйон" для учасників
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- FORM SECTION (Додано relative z-20) -->
-    <section id="consultation" class="relative z-20 py-16 px-4">
+    <!-- FORM SECTION -->
+    <section id="consultation" class="relative z-20 py-12 px-4">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <div class="bg-black/50 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
                 <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
                 <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
 
                 <div class="text-center mb-10 relative z-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Анкета на консультацію</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">Заповни анкету – отримай бонуси</h2>
                     <p class="text-white/80">Відповіді допоможуть скласти вашу стратегію</p>
                 </div>
 
@@ -288,7 +311,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (Додано relative z-20) -->
+    <!-- FOOTER -->
     <footer class="relative z-20 bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10 backdrop-blur-sm">
         <p>© 2026. Всі права захищено.</p>
         <div class="mt-2 flex justify-center gap-4">
