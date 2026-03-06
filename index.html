@@ -1,42 +1,31 @@
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Як накопичити свої перші 100 000 $ | Стратегія</title>
-    
-    <!-- Google Fonts: Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-    
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Intl Tel Input CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <title>Онлайн-школа 3D моделирования</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4E0000',   
-                        darkform: '#111111',  
-                        secondary: '#1A1A1A'
-                    },
-                    fontFamily: {
-                        sans:['Montserrat', 'Arial Narrow', 'sans-serif'],
+                        primary: '#3B82F6', // Основной акцентный цвет
+                        secondary: '#1F2937', // Темный оттенок для текста/элементов
+                        darkform: '#111827'   // Фон для формы
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'bounce-in': 'bounceIn 0.5s ease-out forwards',
+                        'bounce-in': 'bounce-in 0.5s ease-out'
                     },
                     keyframes: {
-                        bounceIn: {
-                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                        'bounce-in': {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '80%': { transform: 'scale(1.05)', opacity: '1' },
                             '100%': { transform: 'scale(1)', opacity: '1' },
                         }
                     }
@@ -45,390 +34,327 @@
         }
     </script>
 
+    <!-- Intl-Tel-Input -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        /* Глобальний фон */
-        body {
-            background-color: #5c1015; /* Запасний колір фону під картинку */
-            color: #ffffff;
-            position: relative;
-        }
+        /* Custom base styles */
+        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; }
 
-        /* Фіксований фон через псевдоелемент для ідеального відображення на мобільних пристроях (особливо iOS) */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            /* ВАЖЛИВО: Назва вашої збереженої картинки */
-            background-image: url('Дизайн без назви (5).png'); 
-            background-size: cover;
-            /* Притискаємо картинку до правого верхнього кута */
-            background-position: top right; 
-            background-repeat: no-repeat;
-        }
-
-        /* Перевизначення стилів для телефону */
+        /* Custom styles for intl-tel-input */
         .iti { width: 100%; }
-        .iti__country-list { background-color: #1a1a1a; color: #fff; border: 1px solid #333; }
-        .iti__country-list li:hover { background-color: #333; }
-        .iti__divider { border-bottom: 1px solid #444; }
+        .iti__flag-container { background-color: #374151; border-radius: 0.5rem 0 0 0.5rem; }
+
+        /* Custom styles for radio buttons */
+        .custom-radio input[type="radio"] { display: none; }
+        .custom-radio label {
+            display: block;
+            cursor: pointer;
+            border: 2px solid #4b5563;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .custom-radio input[type="radio"]:checked + label {
+            border-color: #3B82F6;
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        .custom-radio label:hover {
+            border-color: #6b7280;
+        }
         
-        /* Скроллбар */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #2a0000; }
-        ::-webkit-scrollbar-thumb { background: #7a0000; border-radius: 4px; }
+        /* Dollar animation */
+        #animated-dollar {
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+        #animated-dollar.scrolled {
+            transform: translateY(-200px);
+            opacity: 0;
+        }
     </style>
 </head>
-<body class="font-sans antialiased text-white overflow-x-hidden">
 
-    <!-- Картинка долара в правому куті (Зміщена правіше на мобільному через -right-32 та sm:-right-20) -->
-    <img src="Дизайн без назви (6).png" id="floating-dollar" alt="Долар" class="fixed top-0 -right-32 sm:-right-20 md:right-0 z-10 w-[350px] sm:w-[480px] md:w-[570px] drop-shadow-2xl pointer-events-none">
+<body class="text-secondary">
 
-    <!-- HERO / VSL SECTION (Додано relative z-20, щоб бути поверх долара) -->
-    <section class="relative z-20 pt-16 pb-4 md:pb-10 md:pt-24 px-4">
-        <div class="max-w-4xl mx-auto" data-aos="fade-up">
-            
-            <!-- Оновлений заголовок (Змінено вирівнювання на text-left) -->
-            <h1 class="mb-8 md:mb-10 text-white text-left" style="text-shadow: 1px 2px 6px rgba(0,0,0,0.8), 0px 0px 15px rgba(0,0,0,0.5);">
-                <span class="block text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase">
-                    Як накопичити перші 
-                    <span class="block mt-1 sm:mt-2">100 000$</span>
-                </span>
-                <span class="block text-sm sm:text-base md:text-xl lg:text-2xl font-light leading-snug mt-1 md:mt-2 normal-case tracking-wide text-white/90">
-                    та стабільно отримувати пасивний дохід завдяки інвестиціям
-                </span>
-            </h1>
+    <!-- Animated Dollar Image -->
+    <img id="animated-dollar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAZlBMVEX///8BAQEAAACmpqb6+vrf39/v7+/j4+Pz8/P19fXAwMCVlZWhoaHc3NxGRkbZ2dl5eXmysrJPT09tbW2Li4shISFiYmJVVVWRkZFxcXEtLS2urq5gYGB7e3tKSkpISEg3NzeAgIBISEh3E48zAAACv0lEQVR4nO3d63aqOBSFYbEgqKIiYkEt1ar1/d9wlF7EtrHlTjqHc5/ttH4uYc7ACEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALhG+/49dfczTDMsw318rP+jbh90h38qPq+o+j4P7V7j+vp6tYwxe4u17U7bO63jD7fV63Fbf3xUtO9sH2yvG+tPuxl5XyfrG85w3O02pTNeV2b/224nKj6/tV0b2y+P053W3+d89KfrH5xO9H5t2+1V+v2r7U7nSfr9SutB9t7sPO3g947anWxf+832oMvl8/Lz9nbjQ/r9vV7G267z+3tft+6g/b/b3/f9g87a/b7f6x/p7+2O2v5Wbbf3tQfbe3c+bbfb7b3+HttvtP/TbncfbO/X7b3+/jbtftvt/b3afqftftvt/R3atftvtvd3aP+n3X6/296/0X6/X+3+nfr9f7f7J9r/abdft/dnav/f7X6F9v/X7b7++t+V9vv/bbj/L7Tf/2+7/X21/17b/S9s/+dtv9/+5dv9R9r+T9v9D2z//22/7v/q/r/a7l+w//+3/b77P9v9T2z///2t2v6V/f+t2/7u/j/Udv8K+//dtv8t+v8t2/6t+v/7tv2r+v/ftv1b9f+/bfu36f+/aPu36f9/tP1b9f/vtH1b9f+v0/5B+/9r0v7x+v/XpP1j9f9vSfvH6f/fkPaP1f+/Ie0fp/1/Q9o/Vv//hrR/rP7/DWn/WP3/W9L+sfr/t6T9Y/X/b0n7x+r/X5D2j9X/vyHtH6f9f0PaP1b//4a0f6z+/w1p/1j9/1vS/rH6/7ek/WP1/29J+8fq/9+Q9o/V/78h7R+n/X9D2j9W//+GtH+s/v8Naf9Y/f9b0v6x+v+3pP1j9f+X9P+96L/l93dI+v8G9F/2+/uk/f8J6L/l93dI+v8T0H/J7++Q9P9PoP+S398h6f/fQP8lv79D0v8/gP5Lfn+HpP8fQP8lv79D0v8PQP8lv79D0v8PoP+S398h6X/4l8n/5fL/T8n/X0/5/wUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+1z+5c2N6i1X08AAAAABJRU5ErkJggg==" alt="dollar" class="fixed top-8 right-8 w-24 h-auto z-50">
 
-            <!-- Video Container -->
-            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/50 border-4 border-white/20 cursor-pointer group" id="video-container" onclick="loadVideo()">
-                <img src="https://img.youtube.com/vi/d-TCdHfYob4/sddefault.jpg" alt="Video Thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-500">
-                
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.4)] animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
-                        <i data-lucide="play" class="w-10 h-10 text-primary ml-1 fill-current"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Стрілка вниз -->
-            <div class="mt-6 md:mt-10 flex flex-col items-center justify-center text-center animate-bounce">
-                <p class="text-lg md:text-xl font-medium text-white mb-2 drop-shadow-md">Подивились відео? Тоді саме час забрати бонус</p>
-                <i data-lucide="arrow-down" class="w-8 h-8 text-white/90 stroke-[1] drop-shadow-md"></i>
-            </div>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-secondary">3D_Masters</a>
+            <a href="#form-section" class="px-5 py-2 border border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">Начать обучение</a>
         </div>
-    </section>
+    </header>
 
-    <!-- INFO SECTION (BULLETS) (Додано relative z-20) -->
-    <section class="relative z-20 pt-2 pb-12 md:pt-6 px-4">
-        <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <div class="relative pt-2">
-                
-                <!-- Овальна плашка, що підсвічується, тепер по центру і клікабельна -->
-                <div class="text-center mb-6 w-full flex justify-center">
-                    <a href="#consultation" class="inline-block bg-black/40 backdrop-blur-md border border-red-400 rounded-full px-8 py-3 text-lg sm:text-xl md:text-2xl font-bold text-white shadow-[0_0_20px_rgba(248,113,113,0.4)] hover:bg-white/10 hover:scale-105 hover:shadow-[0_0_30px_rgba(248,113,113,0.6)] transition-all duration-300 cursor-pointer">
-                        Головний бонус після уроку
-                    </a>
+    <main>
+        <!-- HERO SECTION (VSL) -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <div data-aos="fade-up" class="inline-block mb-6">
+                    <span class="text-red-500 border border-red-500 rounded-full px-4 py-2 font-semibold shadow-[0_0_15px_rgba(239,68,68,0.7)]">
+                        Безкоштовний відео-урок
+                    </span>
                 </div>
-                
-                <!-- Текст цитата -->
-                <div class="border-l-4 border-white/40 pl-4 md:pl-5 mb-10 text-left">
-                    <p class="text-base md:text-lg font-normal text-white/90 leading-relaxed drop-shadow-md">
-                        Якщо ви подивились урок — значить ви вже готові діяти. Але різниця між тими, хто "знає", і тими, хто накопичує 100 000 $, — <span class="font-medium text-white">в персональній стратегії</span>.
-                    </p>
-                </div>
-                
-                <!-- Заголовок -->
-                <div class="text-left mb-8 w-full">
-                    <h3 class="text-lg min-[380px]:text-xl md:text-3xl font-bold text-white flex items-start gap-2 md:gap-3 w-full drop-shadow-lg">
-                        <i data-lucide="calendar-check" class="text-white w-6 h-6 md:w-8 md:h-8 shrink-0 mt-0.5 md:mt-1"></i>
-                        <span class="flex-1 leading-tight">Безкоштовна стратегічна консультація</span>
-                    </h3>
-                    <p class="text-base md:text-2xl text-white/90 mt-1 md:mt-2 font-medium pl-8 min-[380px]:pl-9 md:pl-11 drop-shadow-md">по інвестуванню</p>
-                </div>
-
-                <!-- Напівпрозора плашка з обводкою -->
-                <div class="bg-black/40 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-10 shadow-2xl">
-                    <ul class="space-y-5 mb-8">
-                        <li class="flex items-start gap-4 text-white/95 text-lg">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                            <span>Розберемо вашу фінансову точку А без прикрас.</span>
-                        </li>
-                        <li class="flex items-start gap-4 text-white/95 text-lg">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                            <span>Порахуємо реальний математичний план накопичення.</span>
-                        </li>
-                        <li class="flex items-start gap-4 text-white/95 text-lg">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                            <span>Визначимо вашу безпечну стратегію інвестування.</span>
-                        </li>
-                        <li class="flex items-start gap-4 text-white/95 text-lg">
-                            <i data-lucide="check-circle-2" class="w-6 h-6 text-white shrink-0 mt-0.5"></i>
-                            <span>Пропишемо чіткі цифри на найближчі 12 місяців.</span>
-                        </li>
-                    </ul>
-
-                    <!-- Warning Alert -->
-                    <div class="pt-6 border-t border-white/20 flex gap-4 items-start">
-                        <i data-lucide="info" class="w-6 h-6 text-white/80 shrink-0 mt-0.5"></i>
-                        <p class="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                            Це не теорія. Це конкретний план під ваші доходи. Заповніть анкету нижче максимально чесно, щоб я міг підготуватись до нашої зустрічі.
-                        </p>
+                <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-7xl font-extrabold leading-tight mb-8">
+                    ЯК НАКОПИЧИТИ <span class="text-primary">ПЕРШІ 100 000$</span>
+                </h1>
+                <div data-aos="fade-up" data-aos-delay="200" id="video-container" class="relative aspect-video w-full mx-auto bg-slate-800 rounded-2xl shadow-2xl cursor-pointer overflow-hidden">
+                    <img id="video-thumbnail" src="https://img.youtube.com/vi/FWGz_T5b1kE/maxresdefault.jpg" alt="Video Thumbnail" class="absolute inset-0 w-full h-full object-cover">
+                    <div id="play-button" class="absolute inset-0 flex items-center justify-center bg-black/40">
+                        <div class="w-20 h-20 bg-white/80 rounded-full flex items-center justify-center animate-pulse-slow backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-1"><path d="M5 3l14 9-14 9V3z"></path></svg>
+                        </div>
                     </div>
+                    <!-- Iframe will be injected here -->
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FORM SECTION (Додано relative z-20) -->
-    <section id="consultation" class="relative z-20 py-16 px-4">
-        <div class="max-w-3xl mx-auto" data-aos="fade-up">
-            <div class="bg-black/50 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                <div class="absolute -top-6 -right-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
-                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
-
-                <div class="text-center mb-10 relative z-10">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Анкета на консультацію</h2>
-                    <p class="text-white/80">Відповіді допоможуть скласти вашу стратегію</p>
+        <!-- INFO & FORM SECTION -->
+        <section id="form-section" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 max-w-4xl grid md:grid-cols-2 gap-12 items-start">
+                <!-- Info Section -->
+                <div data-aos="fade-up" class="md:mt-4 space-y-8">
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Що ви отримаєте на курсі:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i data-lucide="check-square" class="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span><strong>Повне погруження:</strong> Вивчите Blender, ZBrush, Substance Painter з нуля до PRO.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-square" class="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span><strong>Сильне портфоліо:</strong> Створите 5 ігрових моделей, готових для показу роботодавцю.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-square" class="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0"></i>
+                                <span><strong>Підтримка 24/7:</strong> Особистий куратор та закрите ком'юніті однодумців.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold mb-4">Бонус №2</h3>
+                        <p class="text-gray-700">Спеціальні умови на менторство "ПЕРШИЙ МІЛЬЙОН"</p>
+                    </div>
                 </div>
 
-                <form id="vslForm" class="space-y-6 relative z-10">
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-white/90 mb-2">Ваше Ім'я *</label>
-                            <input type="text" id="name" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40" placeholder="Олександр">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-white/90 mb-2">Телефон *</label>
-                            <input type="tel" id="phone" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors" placeholder="">
-                        </div>
-                    </div>
+                <!-- Form Section -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-darkform text-white p-8 md:p-10 rounded-2xl shadow-2xl">
+                    <h2 class="text-3xl font-bold text-center mb-8">Заповни анкету - отримай бонус</h2>
+                    <form id="lead-form" class="space-y-6">
+                        <input type="text" name="name" placeholder="Ваше ім'я" required class="w-full bg-white/10 border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition">
+                        
+                        <input id="phone" type="tel" name="phone" required>
 
-                    <div>
-                        <label class="block text-sm font-medium text-white/90 mb-3">Ваш рівень доходу зараз:</label>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                            <label class="cursor-pointer">
-                                <input type="radio" name="income" value="Нижче бажаного" class="peer hidden" required>
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    Нижче бажаного
+                        <input type="text" name="messenger_nick" placeholder="Нік в Telegram/Discord" required class="w-full bg-white/10 border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition">
+                        
+                        <input type="text" name="city" placeholder="Ваше місто" required class="w-full bg-white/10 border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition">
+
+                        <!-- Qualifying Questions -->
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="font-semibold mb-4 text-gray-300">1. Ваш досвід в 3D?</p>
+                            <div class="grid grid-cols-1 gap-3 custom-radio">
+                                <div>
+                                    <input type="radio" id="exp-none" name="question1" value="Ніколи не займався" checked>
+                                    <label for="exp-none">Ніколи не займався</label>
                                 </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="income" value="Задовільний" class="peer hidden">
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    Задовільний
+                                <div>
+                                    <input type="radio" id="exp-some" name="question1" value="Дивився уроки, пробував сам">
+                                    <label for="exp-some">Дивився уроки, пробував сам</label>
                                 </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="income" value="Вище бажаного" class="peer hidden">
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    Вище бажаного
+                                <div>
+                                    <input type="radio" id="exp-prof" name="question1" value="Вже працюю в 3D, хочу підвищити навик">
+                                    <label for="exp-prof">Вже працюю в 3D</label>
                                 </div>
-                            </label>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-white/90 mb-3">Чи є у вас кредити/борги?</label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <label class="cursor-pointer">
-                                <input type="radio" name="debt" value="Так" class="peer hidden" required>
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    Так, є
+                        <div class="pt-4 border-t border-gray-700">
+                            <p class="font-semibold mb-4 text-gray-300">2. Який напрямок вам найбільш цікавий?</p>
+                            <div class="grid grid-cols-1 gap-3 custom-radio">
+                                <div>
+                                    <input type="radio" id="dir-gamedev" name="question2" value="GameDev (моделі для ігор)" checked>
+                                    <label for="dir-gamedev">GameDev (моделі для ігор)</label>
                                 </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="debt" value="Ні" class="peer hidden">
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    Ні, немає
+                                <div>
+                                    <input type="radio" id="dir-archviz" name="question2" value="ArchViz (архітектурна візуалізація)">
+                                    <label for="dir-archviz">ArchViz (архітектурна візуалізація)</label>
                                 </div>
-                            </label>
+                                <div>
+                                    <input type="radio" id="dir-motion" name="question2" value="Motion Design (анімація та графіка)">
+                                    <label for="dir-motion">Motion Design (анімація та графіка)</label>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-white/90 mb-3">За який термін хочете досягти 100 000 $?</label>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                            <label class="cursor-pointer">
-                                <input type="radio" name="timeline" value="1 рік" class="peer hidden" required>
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    За 1 рік
-                                </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="timeline" value="5 років" class="peer hidden">
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    За 5 років
-                                </div>
-                            </label>
-                            <label class="cursor-pointer">
-                                <input type="radio" name="timeline" value="10 років" class="peer hidden">
-                                <div class="rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-center text-sm text-white/80 hover:bg-white/10 peer-checked:bg-white peer-checked:text-primary peer-checked:font-bold peer-checked:border-white transition-all">
-                                    За 10 років
-                                </div>
-                            </label>
+                        <div class="pt-4 border-t border-gray-700">
+                             <label for="question3" class="font-semibold mb-4 text-gray-300 block">3. Що ви очікуєте від навчання?</label>
+                             <textarea id="question3" name="question3" rows="3" placeholder="Наприклад: знайти першу роботу в GameDev" class="w-full bg-white/10 border-2 border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"></textarea>
                         </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium text-white/90 mb-2">Ваша головна фінансова ціль *</label>
-                        <textarea id="goal" rows="3" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white transition-colors placeholder-white/40 resize-none" placeholder="Опишіть коротко, для чого вам потрібен цей капітал..."></textarea>
-                    </div>
-
-                    <button type="submit" id="submitBtn" class="w-full bg-white text-primary font-bold text-lg uppercase tracking-wider py-4 rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:bg-gray-100 hover:scale-[1.02] transition-all duration-300 flex justify-center items-center gap-2 mt-4">
-                        <span>Записатись на консультацію</span>
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </button>
-                </form>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" id="submit-button" class="w-full bg-primary text-white font-bold uppercase py-4 rounded-lg shadow-lg hover:bg-blue-500 transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                            Забронювати місце
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FOOTER (Додано relative z-20) -->
-    <footer class="relative z-20 bg-black/50 text-white/50 py-8 text-center text-sm border-t border-white/10 backdrop-blur-sm">
-        <p>© 2026. Всі права захищено.</p>
-        <div class="mt-2 flex justify-center gap-4">
-            <a href="#" class="hover:text-white transition-colors">Політика конфіденційності</a>
+    <!-- FOOTER -->
+    <footer class="bg-gray-100">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; 2026 3D_Masters. Всі права захищені.</p>
         </div>
     </footer>
 
     <!-- SUCCESS MODAL -->
-    <div id="successModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm px-4">
-        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center relative shadow-2xl animate-bounce-in">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-900 transition-colors">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i data-lucide="check" class="w-10 h-10 text-primary"></i>
+    <div id="success-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-2xl p-10 text-center shadow-2xl animate-bounce-in">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-12 h-12 text-green-600"></i>
             </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Заявка прийнята!</h3>
-            <p class="text-gray-600 mb-6">Я отримав ваші дані. Найближчим часом зв'яжусь з вами для узгодження часу консультації.</p>
-            <button onclick="closeModal()" class="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-[#3a0000] transition-colors">
-                Зрозуміло
-            </button>
+            <h3 class="text-2xl font-bold mb-2">Заявка успішно відправлена!</h3>
+            <p class="text-gray-600">Ми зв'яжемося з вами найближчим часом.</p>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
-
     <script>
+        // Init AOS
+        AOS.init({ once: true, duration: 800 });
+
+        // Init Lucide Icons
         lucide.createIcons();
-        AOS.init({ once: true, offset: 100, duration: 800 });
 
-        const YOUTUBE_VIDEO_ID = "d-TCdHfYob4"; 
-        function loadVideo() {
-            const container = document.getElementById('video-container');
-            container.innerHTML = `
-                <iframe 
-                    class="absolute inset-0 w-full h-full rounded-xl"
-                    src="https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0&showinfo=0" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            `;
-            container.onclick = null;
-            container.classList.remove('cursor-pointer', 'group');
-        }
+        // Animated Dollar on Scroll
+        const dollarImage = document.getElementById('animated-dollar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                dollarImage.classList.add('scrolled');
+            } else {
+                dollarImage.classList.remove('scrolled');
+            }
+        });
 
+        // VSL Player Logic
+        const videoContainer = document.getElementById('video-container');
+        const videoId = 'FWGz_T5b1kE';
+        videoContainer.addEventListener('click', () => {
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.className = 'absolute inset-0 w-full h-full';
+            videoContainer.innerHTML = '';
+            videoContainer.appendChild(iframe);
+        });
+
+        // Intl-Tel-Input Logic
         const phoneInput = document.querySelector("#phone");
         const iti = window.intlTelInput(phoneInput, {
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
             initialCountry: "auto",
-            separateDialCode: true,
-            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
             geoIpLookup: function(callback) {
                 fetch("https://get.geojs.io/v1/ip/country.json")
                     .then(res => res.json())
                     .then(data => callback(data.country))
-                    .catch(() => callback("ua"));
-            }
+                    .catch(() => callback("us"));
+            },
+            customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+                return "e.g. " + selectedCountryPlaceholder;
+            },
+            separateDialCode: true,
         });
 
-        function getUTMs() {
+        // Form Submission Logic
+        const form = document.getElementById('lead-form');
+        const submitButton = document.getElementById('submit-button');
+        const successModal = document.getElementById('success-modal');
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyv.../exec'; // <-- ВАЖНО: ЗАМЕНИТЬ НА ВАШ URL
+
+        // UTM Parser
+        function getUTMParams() {
             const params = new URLSearchParams(window.location.search);
             return {
                 utm_source: params.get('utm_source') || '-',
                 utm_medium: params.get('utm_medium') || '-',
                 utm_campaign: params.get('utm_campaign') || '-',
                 utm_content: params.get('utm_content') || '-',
-                utm_term: params.get('utm_term') || '-'
+                utm_term: params.get('utm_term') || '-',
             };
         }
 
-        const GOOGLE_SCRIPT_URL = "ТУТ_ВСТАВ_ПОСИЛАННЯ_НА_WEB_APP_GOOGLE_APPS_SCRIPT"; 
-        const TARGET_SHEET_NAME = "Leads_Finance100k"; 
-
-        const form = document.getElementById('vslForm');
-        const submitBtn = document.getElementById('submitBtn');
-
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', e => {
             e.preventDefault();
-            
-            if (!iti.isValidNumber()) {
-                alert("Будь ласка, введіть коректний номер телефону");
-                phoneInput.focus();
-                return;
-            }
 
-            const utms = getUTMs();
-            const formData = {
-                targetSheet: TARGET_SHEET_NAME,
-                name: document.getElementById('name').value.trim(),
-                phone: iti.getNumber(),
-                income: document.querySelector('input[name="income"]:checked').value,
-                debt: document.querySelector('input[name="debt"]:checked').value,
-                timeline: document.querySelector('input[name="timeline"]:checked').value,
-                goal: document.getElementById('goal').value.trim(),
-                ...utms
+            // Disable button
+            submitButton.disabled = true;
+            submitButton.textContent = 'Відправка...';
+            submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Get full phone number
+            data.phone = iti.getNumber();
+
+            // Get selected radio values
+            data.question1 = document.querySelector('input[name="question1"]:checked').value;
+            data.question2 = document.querySelector('input[name="question2"]:checked').value;
+
+            // Combine all data for submission
+            const submissionData = {
+                targetSheet: 'Leads_3D', // Назва листа
+                ...data,
+                ...getUTMParams()
             };
 
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-6 h-6 animate-spin"></i> Відправка...';
-            submitBtn.disabled = true;
-            lucide.createIcons();
-
-            try {
-                await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Important for Google Apps Script
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(submissionData),
+            })
+            .then(res => {
+                // Since mode is 'no-cors', we can't read the response.
+                // We'll assume success and handle errors on the backend.
                 form.reset();
-                document.getElementById('successModal').classList.remove('hidden');
-                document.getElementById('successModal').classList.add('flex');
-            } catch (error) {
-                console.error('Помилка відправки:', error);
-                alert('Сталася помилка. Спробуйте ще раз або напишіть нам у месенджер.');
-            } finally {
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-                lucide.createIcons();
-            }
+                iti.setCountry("auto"); // Reset country detection
+                successModal.classList.remove('hidden');
+                setTimeout(() => {
+                   successModal.classList.add('hidden');
+                }, 5000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Сталася помилка при відправці. Будь ласка, спробуйте знову.');
+            })
+            .finally(() => {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.textContent = 'Забронювати місце';
+                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
+            });
         });
 
-        function closeModal() {
-            const modal = document.getElementById('successModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // Анімація долара при скролі (паралакс ефект)
-        window.addEventListener('scroll', () => {
-            const dollar = document.getElementById('floating-dollar');
-            if (dollar) {
-                // Картинка плавно тягнеться вгору пропорційно тому, наскільки ви проскролили вниз
-                dollar.style.transform = `translateY(-${window.scrollY * 0.7}px)`;
-            }
-        });
     </script>
 </body>
 </html>
